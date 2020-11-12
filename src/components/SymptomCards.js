@@ -1,23 +1,38 @@
-import React, { Component } from 'react';
-import DefaultContext from './context/DefaultContext'
+import React, { Component } from "react";
+import DefaultContext from "./context/DefaultContext";
 //import { Link } from 'react-router-dom';
 
 class SymptomCards extends Component {
-    static contextType = DefaultContext;
+  static contextType = DefaultContext;
+  deleteSymptom = () => {
+    fetch(`${this.context.url}/symptoms/${this.props.id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => {
+        this.context.updateStore();
+        //this.props.history.push("/");
+      })
+      .catch((e) => {
+        throw new Error(`Error deleting: ${e.message}`);
+      });
+  };
 
-    render(){
-        const { id, name, severity, description } = this.props;
-        
-        return(
-            <li>
-                <h2>{name}</h2>
-                <p>{severity}</p>
-                <p>{description}</p>
-                <button>Delete</button>
-                <button>Modify</button>
-            </li>
-        )
-    }
+  render() {
+    const { id, name, severity, description } = this.props;
+
+    return (
+      <li>
+        <h2>{name}</h2>
+        <p>{severity}</p>
+        <p>{description}</p>
+        <button onClick={this.deleteSymptom}>Delete</button>
+        <button>Modify</button>
+      </li>
+    );
+  }
 }
 
-export default SymptomCards
+export default SymptomCards;

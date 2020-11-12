@@ -43,6 +43,8 @@ class AddSymptomForm extends Component {
             }}
         >
           <h3>New Symptom</h3>
+          <input type="date"></input>
+          <input type="time"></input>
           <select name="severity" id="severity">
             <option className="hidden" required>Severity</option>
             <option value="1">1</option>
