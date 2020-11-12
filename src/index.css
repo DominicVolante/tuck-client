@@ -10,7 +10,7 @@ body {
 }
 .header_flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .wrapper {

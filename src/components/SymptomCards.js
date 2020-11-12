@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import DefaultContext from './context/DefaultContext'
 //import { Link } from 'react-router-dom';
 
 class SymptomCards extends Component {
+    static contextType = DefaultContext;
+
     render(){
-        const date = new Date(this.props.date)
+        const { id, name, severity, description } = this.props;
+        
         return(
             <li>
-                <h2>{this.props.symptom}</h2>
-                <p>{date.toLocaleString()}</p>
-                <p>{this.props.description}</p>
+                <h2>{name}</h2>
+                <p>{severity}</p>
+                <p>{description}</p>
                 <button>Delete</button>
                 <button>Modify</button>
             </li>

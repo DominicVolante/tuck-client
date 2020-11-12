@@ -1,15 +1,24 @@
 import React, { Component } from "react";
+import { Link, withRouter } from 'react-router-dom';
 import SymptomCards from "./SymptomCards";
+import DefaultContext from './context/DefaultContext';
+
 
 class SymptomList extends Component {
+  static contextType = DefaultContext;
+
   generateSymptomList = () => {
-    return this.props.symptoms.map((symptom) => {
+    if (typeof this.props.store !== 'object') return;
+
+    return this.props.store.symptoms.map(symptom => {
       return (
         <SymptomCards
           key={symptom.id}
           id={symptom.id}
-          symptom={symptom.symptom}
+          name={symptom.name}
+          severity={symptom.severity}
           description={symptom.description}
+          store={this.props.store}
         />
       );
     });
@@ -26,7 +35,9 @@ class SymptomList extends Component {
         </select>
         <ul>
           {this.generateSymptomList()}
-          <li>Add Symptom</li>
+          <Link to={'/addsymptom/'}>
+            <li>Add Symptom</li>
+          </Link>
         </ul>
       </section>
     );

@@ -1,18 +1,58 @@
 import React, { Component } from "react";
-import Header from './components/Header';
-import HomeRoute from './components/routes/HomeRoute';
-//import { Route } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AddSymptomRoute from './components/routes/AddSymptomRoute'
+import Header from "./components/Header";
+import HomeRoute from "./components/routes/HomeRoute";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AddSymptomRoute from "./components/routes/AddSymptomRoute";
+import DefaultContext from "./components/context/DefaultContext";
 
 class App extends Component {
+  static contextType = DefaultContext;
+
+  state = {
+    store: {
+      symptoms: [],
+    },
+    url: "http://localhost:8080",
+  };
+
+  updateStore = () => {
+    this.getSymptoms();
+  };
+
+  getSymptoms = () => {
+    fetch(`${this.state.url}/symptoms`)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          store: {
+            symptoms: res,
+          },
+        });
+      })
+      // .catch((err) => {
+      //   throw new Error(`Error getting symptoms: ${err.message}`);
+      // });
+  };
+
+  componentDidMount = () => {
+    this.updateStore();
+  };
+
   render() {
+    const contextVal = {
+      ...this.state,
+      updateStore: this.updateStore,
+    };
     return (
-      <div className="App">
-        <Header />
-        <Route path='/' component={HomeRoute} exact />
-        <Route path='/addsymptom' component={AddSymptomRoute} />
-      </div>
+      <DefaultContext.Provider value={contextVal}>
+        <div className="App">
+          <Header />
+          <Route exact path="/" 
+            render={ () => <HomeRoute store={this.state.store} />} 
+          />
+          <Route path="/addsymptom" component={AddSymptomRoute} />
+        </div>
+      </DefaultContext.Provider>
     );
   }
 }
