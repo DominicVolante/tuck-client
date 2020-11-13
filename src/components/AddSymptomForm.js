@@ -28,6 +28,7 @@ class AddSymptomForm extends Component {
           this.props.history.push('/');
       })
       .catch(e => {
+          console.error(e)
           throw new Error("Error adding symptom")
       });
   }
