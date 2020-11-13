@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import DefaultContext from "./context/DefaultContext";
+import { Link } from "react-router-dom";
+//import EditSymptomForm from './EditSymptomForm'
 //import { Link } from 'react-router-dom';
 
 class SymptomCards extends Component {
@@ -29,7 +31,9 @@ class SymptomCards extends Component {
         <p>{severity}</p>
         <p>{description}</p>
         <button onClick={this.deleteSymptom}>Delete</button>
+        <Link to={`/edit/${id}`}>
         <button>Modify</button>
+        </Link>
       </li>
     );
   }

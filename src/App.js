@@ -4,6 +4,7 @@ import HomeRoute from "./components/routes/HomeRoute";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddSymptomRoute from "./components/routes/AddSymptomRoute";
 import DefaultContext from "./components/context/DefaultContext";
+import EditSymptomForm from "./components/EditSymptomForm";
 
 class App extends Component {
   static contextType = DefaultContext;
@@ -51,6 +52,7 @@ class App extends Component {
             render={ () => <HomeRoute store={this.state.store} />} 
           />
           <Route path="/addsymptom" component={AddSymptomRoute} />
+          <Route path="/edit/:id" component={EditSymptomForm} />
         </div>
       </DefaultContext.Provider>
     );
