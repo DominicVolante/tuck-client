@@ -64,7 +64,7 @@ class EditSymptomForm extends Component {
             id="severity"
             value={this.state.symptom.severity}
             onChange={(e)=> this.setState({symptom: {...this.state.symptom, severity: e.target.value}})}
-            required
+            required 
           >
             <option className="hidden">Severity</option>
             <option value="1">1</option>
