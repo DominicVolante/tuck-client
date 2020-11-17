@@ -26,14 +26,18 @@ class SymptomCards extends Component {
     const { id, name, severity, description } = this.props;
 
     return (
-      <li>
-        <h2>{name}</h2>
+      <li className="grid-item">
+        
+        <h3>{name}</h3>
         <p>{severity}</p>
         <p>{description}</p>
         <button onClick={this.deleteSymptom}>Delete</button>
-        <Link to={`/edit/${id}`}>
+        <Link to={{
+            pathname:`/edit/${id}`,
+            }}>
         <button>Modify</button>
         </Link>
+       
       </li>
     );
   }

@@ -13,7 +13,7 @@ class App extends Component {
     store: {
       symptoms: [],
     },
-    url: "http://localhost:8080",
+    url: this.context.url,
   };
 
   updateStore = () => {

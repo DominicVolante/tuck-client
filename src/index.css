@@ -46,39 +46,49 @@ body {
   margin-top: 1px;
 }
 .register-form {
-    margin-top: 200px;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    max-width: 190px;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
-}
-.hidden {
-    display: none;
-}
-ul{
-  list-style: none;
+  margin-top: 200px;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  max-width: 190px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
 }
-li {
-    border: 1px solid black;
-    padding: 5px;
-    margin: 3px;  
+.hidden {
+  display: none;
+}
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid-item {
+  max-width: 80px;
+  max-height: 200px;
+  margin: 1px;
+  padding-left: 2px;
+  padding-top: 2px;
+  border: 1px solid black;
+}
+.gird-item-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+.li {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 3px;
 }
 
 .log {
-    margin-top: 200px;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
+  margin: 100px auto;
+  border: 1px solid black;
+  max-width: 660px;
+  padding: 5px;
 }
