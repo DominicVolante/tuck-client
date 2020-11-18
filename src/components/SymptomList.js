@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import SymptomCards from "./SymptomCards";
 import DefaultContext from "./context/DefaultContext";
+import Sidebar from './Sidebar'
 
 class SymptomList extends Component {
   static contextType = DefaultContext;
@@ -16,7 +17,6 @@ class SymptomList extends Component {
           id={symptom.id}
           name={symptom.name}
           severity={symptom.severity}
-          description={symptom.description}
           store={this.props.store}
         />
       );
@@ -25,16 +25,7 @@ class SymptomList extends Component {
 
   render() {
     return (
-      <section className="log">
-        <h3>Your log</h3>
-        <select name="organize" id="organize">
-          <option className="hidden">Sort</option>
-          <option value="something">Date</option>
-          <option value="something">Severity</option>
-        </select>
-        <Link to={"/addsymptom/"}>
-          Add Symptom
-        </Link>
+      <section className="log main">
         <ul className="flex-grid">{this.generateSymptomList()}</ul>
       </section>
     );

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import DefaultContext from "./context/DefaultContext";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
+
 //import EditSymptomForm from './EditSymptomForm'
 //import { Link } from 'react-router-dom';
 
@@ -27,17 +30,27 @@ class SymptomCards extends Component {
 
     return (
       <li className="grid-item">
-        
         <h3>{name}</h3>
         <p>{severity}</p>
         <p>{description}</p>
-        <button onClick={this.deleteSymptom}>Delete</button>
-        <Link to={{
-            pathname:`/edit/${id}`,
-            }}>
-        <button>Modify</button>
+        <button
+          id="delete"
+          name="delete"
+          aria-label="delete"
+          className="symptom-button"
+          onClick={this.deleteSymptom}
+        >
+          <FontAwesomeIcon icon={faTrashAlt} size="2x" />
+        </button>
+        <Link
+          to={{
+            pathname: `/edit/${id}`,
+          }}
+        >
+          <button name="edit" aria-label="edit" className="symptom-button">
+            <FontAwesomeIcon icon={faEdit} size="2x" />
+          </button>
         </Link>
-       
       </li>
     );
   }
