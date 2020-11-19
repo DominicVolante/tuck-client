@@ -15,6 +15,7 @@ class SymptomList extends Component {
         <SymptomCards
           key={symptom.id}
           id={symptom.id}
+          date={symptom.date}
           name={symptom.name}
           severity={symptom.severity}
           store={this.props.store}

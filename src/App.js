@@ -17,8 +17,19 @@ class App extends Component {
   };
 
   sortList = (sort) => {
-    if (!sort || sort === "date") {
-      console.log("no sort function or maybe you chose 'date' like a damn idiot");
+    if (!sort) {
+      return;
+    }
+    if (sort === "date") {
+      let sorted = [...this.state.store.symptoms];
+      sorted.sort((a, b) => {
+        return b.date - a.date;
+      });
+      this.setState({
+        store: {
+          symptoms: sorted,
+        },
+      });
     }
     if (sort === "severity") {
       let sorted = [...this.state.store.symptoms];
@@ -43,7 +54,7 @@ class App extends Component {
       .then((res) => {
         this.setState({
           store: {
-            symptoms: res,
+            symptoms: res
           },
         });
       });
@@ -68,7 +79,9 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <HomeRoute store={this.state.store} sortList={this.sortList} />}
+            render={() => (
+              <HomeRoute store={this.state.store} sortList={this.sortList} />
+            )}
           />
           <Route path="/addsymptom" component={AddSymptomRoute} />
           <Route path="/edit/:id" component={EditSymptomForm} />

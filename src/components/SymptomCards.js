@@ -26,11 +26,13 @@ class SymptomCards extends Component {
   };
 
   render() {
-    const { id, name, severity, description } = this.props;
+    const { date, id, name, severity, description } = this.props;
 
+    const dateString = new Date(date).toLocaleDateString()
     return (
       <li className="grid-item">
-        <h3>{name}</h3>
+        <h3>{dateString}</h3>
+        <h4>{name}</h4>
         <p>{severity}</p>
         <p>{description}</p>
         <button
