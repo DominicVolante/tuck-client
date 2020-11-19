@@ -27,7 +27,6 @@ class SymptomCards extends Component {
 
   render() {
     const { date, id, name, severity, description } = this.props;
-
     const dateString = new Date(date).toLocaleDateString()
     return (
       <li className="grid-item">
