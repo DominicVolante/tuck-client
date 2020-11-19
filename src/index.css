@@ -6,11 +6,11 @@ body {
 }
 
 .header {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 .header_flex {
   display: flex;
-  justify-content: space-around;
+  margin-left: 100px;
   align-items: center;
 }
 .wrapper {
@@ -82,7 +82,10 @@ label {
   border: 1px solid black;
 } */
 .grid-item {
-  max-width: 14%;
+  margin: 1px;
+  border-radius: 0.3em;
+  max-width: 30%;
+  min-width: 14%;
   max-height: auto;
   padding-left: 2px;
   padding-top: 2px;
@@ -106,11 +109,11 @@ ul {
   border: 0;
   position: relative;
   background-color: white;
-
+  margin: 2px;
 }
 .log {
   margin: 50px;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   max-width: auto;
   padding: 5px;
 }

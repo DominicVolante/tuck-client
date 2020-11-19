@@ -40,15 +40,15 @@ class SymptomCards extends Component {
           className="symptom-button"
           onClick={this.deleteSymptom}
         >
-          <FontAwesomeIcon icon={faTrashAlt} size="2x" />
+          <FontAwesomeIcon icon={faTrashAlt} size="1x" />
         </button>
         <Link
           to={{
             pathname: `/edit/${id}`,
           }}
         >
-          <button name="edit" aria-label="edit" className="symptom-button">
-            <FontAwesomeIcon icon={faEdit} size="2x" />
+          <button name="edit" aria-label="edit" aria-pressed="false" className="symptom-button">
+            <FontAwesomeIcon icon={faEdit} size="1x" alt="edit icon"/>
           </button>
         </Link>
       </li>

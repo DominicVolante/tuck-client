@@ -90,7 +90,7 @@ class EditSymptomForm extends Component {
             required
           ></textarea>
           <button type="submit">Tuck it</button>
-          <button>Cancel</button>
+          <button type="reset" onClick={() => this.props.history.push('/')}>Cancel</button>
         </form>
       </div>
     );

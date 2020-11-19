@@ -9,7 +9,7 @@ class HomeRoute extends Component {
     render() {
         return (
             <div className="sectionrow">
-            <Sidebar />
+            <Sidebar sortList={this.props.sortList} />
             <SymptomList store={this.props.store} />
             </div>
         )

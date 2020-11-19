@@ -16,6 +16,23 @@ class App extends Component {
     url: this.context.url,
   };
 
+  sortList = (sort) => {
+    if (!sort || sort === "date") {
+      console.log("no sort function or maybe you chose 'date' like a damn idiot");
+    }
+    if (sort === "severity") {
+      let sorted = [...this.state.store.symptoms];
+      sorted.sort((a, b) => {
+        return b.severity - a.severity;
+      });
+      this.setState({
+        store: {
+          symptoms: sorted,
+        },
+      });
+    }
+  };
+
   updateStore = () => {
     this.getSymptoms();
   };
@@ -29,10 +46,10 @@ class App extends Component {
             symptoms: res,
           },
         });
-      })
-      // .catch((err) => {
-      //   throw new Error(`Error getting symptoms: ${err.message}`);
-      // });
+      });
+    // .catch((err) => {
+    //   throw new Error(`Error getting symptoms: ${err.message}`);
+    // });
   };
 
   componentDidMount = () => {
@@ -48,8 +65,10 @@ class App extends Component {
       <DefaultContext.Provider value={contextVal}>
         <div className="App">
           <Header />
-          <Route exact path="/" 
-            render={ () => <HomeRoute store={this.state.store} />} 
+          <Route
+            exact
+            path="/"
+            render={() => <HomeRoute store={this.state.store} sortList={this.sortList} />}
           />
           <Route path="/addsymptom" component={AddSymptomRoute} />
           <Route path="/edit/:id" component={EditSymptomForm} />
