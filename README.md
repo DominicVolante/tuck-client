@@ -9,6 +9,20 @@ The app also allows used to view their Tuck chart by the severity of their sympt
 
 Users can add as many details in their description as needed and can view the description of a specific symptom by clicking on the expand icon on their Tuck chart.
 
+###### Landing Page
 ![Landing Page](/screenshots/landingPageImg.png)
-Format: ![landing]
 
+###### Home with symptoms added
+![unsorted home](/screenshots/unsortedImg.png)
+
+###### Home with symptoms sorted by severity
+![sorted home](/screenshots/sortedImg.png)
+
+###### Add symptom form
+![add symptom](/screenshots/addSymptomImg.png)
+
+###### Edit symptom form
+![edit symptom](/screenshots/editSymptomImg.png)
+
+###### Expanded symptom form page for more details
+![expanded symptom](/screenshots/expandedImg.png)
