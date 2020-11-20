@@ -25,7 +25,7 @@ class AddSymptomForm extends Component {
       })
       .then(r => {
           this.context.updateStore();
-          this.props.history.push('/');
+          this.props.history.push('/home');
       })
       .catch(e => {
           console.error(e)
