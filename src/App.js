@@ -78,13 +78,13 @@ class App extends Component {
           <Header />
           <Route
             exact
-            path="/"
+            path="/home"
             render={() => (
               <HomeRoute store={this.state.store} sortList={this.sortList} />
             )}
           />
-          <Route path="/addsymptom" component={AddSymptomRoute} />
-          <Route path="/edit/:id" component={EditSymptomForm} />
+          <Route path="/home/addsymptom" component={AddSymptomRoute} />
+          <Route path="/home/edit/:id" component={EditSymptomForm} />
         </div>
       </DefaultContext.Provider>
     );

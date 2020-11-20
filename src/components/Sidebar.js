@@ -12,7 +12,7 @@ class Sidebar extends Component {
       <div className="sidebar">
         <h3>Your log</h3>
         <div>
-          <Link to={"/addsymptom/"}><FontAwesomeIcon icon={faPlus} />Add Symptom</Link>
+          <Link to={"/home/addsymptom"}><FontAwesomeIcon icon={faPlus} />Add Symptom</Link>
         </div>
         <div>
           <label htmlFor="organize">Sort your Tuck</label>

@@ -30,9 +30,9 @@ class SymptomCards extends Component {
     const dateString = new Date(date).toLocaleDateString()
     return (
       <li className="grid-item">
-        <h3>{dateString}</h3>
-        <h4>{name}</h4>
-        <p>{severity}</p>
+        <h4>{dateString}</h4>
+        <h5>{name}</h5>
+        <p>Severity: {severity}</p>
         <p>{description}</p>
         <button
           id="delete"
@@ -45,7 +45,7 @@ class SymptomCards extends Component {
         </button>
         <Link
           to={{
-            pathname: `/edit/${id}`,
+            pathname: `/home/edit/${id}`,
           }}
         >
           <button name="edit" aria-label="edit" aria-pressed="false" className="symptom-button">

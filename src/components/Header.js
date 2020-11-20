@@ -1,11 +1,14 @@
 import React from 'react';
+import tuckLogo from '../images/tuckLogo.png'
 
 
 const Header = () => {
+  console.log(tuckLogo)
     return <header className="header">
         <div className="header_flex ">
-          <h1>Tuck</h1>
+          <img src={tuckLogo} alt="logo" />
         </div>
+        <div className="headerBar"></div>
     </header>
 }
 
