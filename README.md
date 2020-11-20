@@ -24,5 +24,5 @@ Users can add as many details in their description as needed and can view the de
 ###### Edit symptom form
 ![edit symptom](/screenshots/editSymptomImg.png)
 
-###### Expanded symptom form page for more details
+###### Expanded symptom page for more details
 ![expanded symptom](/screenshots/expandedImg.png)
