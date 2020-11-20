@@ -59,7 +59,7 @@ class AddSymptomForm extends Component {
           <label htmlFor="description">Description</label>
           <textarea name="description" id="description" required></textarea>
           <button className="form-button" type="submit">Tuck it</button>
-          <button className="form-button" type="reset" onClick={() => this.props.history.push('/')}>Cancel</button>
+          <button className="form-button" type="reset" onClick={() => this.props.history.push('/home')}>Cancel</button>
         </form>
       </div>
     );
