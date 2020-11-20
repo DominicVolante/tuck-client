@@ -29,7 +29,7 @@ class EditSymptomForm extends Component {
     })
       .then((r) => {
         this.context.updateStore();
-        this.props.history.push('/');
+        this.props.history.push('/home');
       })
       .catch((e) => {
         throw new Error("Error updating symptom");
@@ -57,8 +57,7 @@ class EditSymptomForm extends Component {
           }}
         >
           <h3>Edit Symptom</h3>
-          <input type="date"></input>
-          <input type="time"></input>
+          <label htmlFor="severity">Symptom Severity</label>
           <select
             name="severity"
             id="severity"
@@ -89,8 +88,8 @@ class EditSymptomForm extends Component {
             defaultValue={this.state.symptom.description}
             required
           ></textarea>
-          <button type="submit">Tuck it</button>
-          <button type="reset" onClick={() => this.props.history.push('/')}>Cancel</button>
+          <button className="form-button" type="submit">Tuck it</button>
+          <button className="form-button" type="reset" onClick={() => this.props.history.push('/home')}>Cancel</button>
         </form>
       </div>
     );

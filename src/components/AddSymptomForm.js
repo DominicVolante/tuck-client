@@ -44,8 +44,7 @@ class AddSymptomForm extends Component {
             }}
         >
           <h3>New Symptom</h3>
-          <input type="date"></input>
-          <input type="time"></input>
+          <label htmlFor="severity">Symptom Severity</label>
           <select name="severity" id="severity">
             <option className="hidden" required>Severity</option>
             <option value="1">1</option>
@@ -59,8 +58,8 @@ class AddSymptomForm extends Component {
           <input type="text" name="name" id="name" placeholder="Fly-biting" required />
           <label htmlFor="description">Description</label>
           <textarea name="description" id="description" required></textarea>
-          <button type="submit">Tuck it</button>
-          <button type="reset" onClick={() => this.props.history.push('/')}>Cancel</button>
+          <button className="form-button" type="submit">Tuck it</button>
+          <button className="form-button" type="reset" onClick={() => this.props.history.push('/')}>Cancel</button>
         </form>
       </div>
     );

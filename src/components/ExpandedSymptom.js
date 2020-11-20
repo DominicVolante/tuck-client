@@ -30,11 +30,17 @@ class ExpandedSymptom extends Component {
         <h5>Symptom: {name}</h5>
         <p>Severity: {severity}</p>
         <p>Description: {description}</p>
-        <button className="symptom-button" type="reset" onClick={() => this.props.history.push('/home')}><FontAwesomeIcon
-              icon={faArrowAltCircleLeft}
-              size="2x"
-              alt="back icon"
-            /></button>
+        <button
+          className="symptom-button"
+          type="reset"
+          onClick={() => this.props.history.push("/home")}
+        >
+          <FontAwesomeIcon
+            icon={faArrowAltCircleLeft}
+            size="2x"
+            alt="back icon"
+          />
+        </button>
       </div>
     );
   }

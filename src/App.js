@@ -25,7 +25,8 @@ class App extends Component {
     if (sort === "date") {
       let sorted = [...this.state.store.symptoms];
       sorted.sort((a, b) => {
-        return b.date - a.date;
+        
+        return new Date(b.date) - new Date(a.date);
       });
       this.setState({
         store: {

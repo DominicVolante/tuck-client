@@ -35,7 +35,7 @@ class SymptomCards extends Component {
     return (
       <li className="grid-item">
         <h4>{dateString}</h4>
-        <h5 className="textOver">{name}</h5>
+        <p className="textOver">{name}</p>
         <p>Severity: {severity}</p>
         <p>{description}</p>
 
