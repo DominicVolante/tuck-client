@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddSymptomRoute from "./components/routes/AddSymptomRoute";
 import DefaultContext from "./components/context/DefaultContext";
 import EditSymptomForm from "./components/EditSymptomForm";
+import LandingPage from "./components/LandingPage";
+import ExpandedSymptom from './components/ExpandedSymptom'
 
 class App extends Component {
   static contextType = DefaultContext;
@@ -76,6 +78,7 @@ class App extends Component {
       <DefaultContext.Provider value={contextVal}>
         <div className="App">
           <Header />
+          <Route exact path="/" component={LandingPage} />
           <Route
             exact
             path="/home"
@@ -85,6 +88,7 @@ class App extends Component {
           />
           <Route path="/home/addsymptom" component={AddSymptomRoute} />
           <Route path="/home/edit/:id" component={EditSymptomForm} />
+          <Route path="/home/details/:id" component={ExpandedSymptom} />
         </div>
       </DefaultContext.Provider>
     );
