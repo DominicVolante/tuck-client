@@ -45,8 +45,8 @@ class AddSymptomForm extends Component {
         >
           <h3>New Symptom</h3>
           <label htmlFor="severity">Symptom Severity</label>
-          <select name="severity" id="severity">
-            <option className="hidden" required>Severity</option>
+          <select name="severity" id="severity" required>
+            <option className="hidden" value="">Severity</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
