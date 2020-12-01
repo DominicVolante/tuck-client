@@ -29,7 +29,7 @@ class EditSymptomForm extends Component {
     })
       .then((r) => {
         this.context.updateStore();
-        this.props.history.push('/home');
+        this.props.history.push("/home");
       })
       .catch((e) => {
         throw new Error("Error updating symptom");
@@ -62,10 +62,16 @@ class EditSymptomForm extends Component {
             name="severity"
             id="severity"
             value={this.state.symptom.severity}
-            onChange={(e)=> this.setState({symptom: {...this.state.symptom, severity: e.target.value}})}
-            required 
+            onChange={(e) =>
+              this.setState({
+                symptom: { ...this.state.symptom, severity: e.target.value },
+              })
+            }
+            required
           >
-            <option className="hidden" value="">Severity</option>
+            <option className="hidden" value="">
+              Severity
+            </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -88,8 +94,16 @@ class EditSymptomForm extends Component {
             defaultValue={this.state.symptom.description}
             required
           ></textarea>
-          <button className="form-button" type="submit">Tuck it</button>
-          <button className="form-button" type="reset" onClick={() => this.props.history.push('/home')}>Cancel</button>
+          <button className="form-button" type="submit">
+            Tuck it
+          </button>
+          <button
+            className="form-button"
+            type="reset"
+            onClick={() => this.props.history.push("/home")}
+          >
+            Cancel
+          </button>
         </form>
       </div>
     );

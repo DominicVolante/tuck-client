@@ -6,7 +6,7 @@ import AddSymptomRoute from "./components/routes/AddSymptomRoute";
 import DefaultContext from "./components/context/DefaultContext";
 import EditSymptomForm from "./components/EditSymptomForm";
 import LandingPage from "./components/LandingPage";
-import ExpandedSymptom from './components/ExpandedSymptom'
+import ExpandedSymptom from "./components/ExpandedSymptom";
 
 class App extends Component {
   static contextType = DefaultContext;
@@ -25,7 +25,6 @@ class App extends Component {
     if (sort === "date") {
       let sorted = [...this.state.store.symptoms];
       sorted.sort((a, b) => {
-        
         return new Date(b.date) - new Date(a.date);
       });
       this.setState({
@@ -57,7 +56,7 @@ class App extends Component {
       .then((res) => {
         this.setState({
           store: {
-            symptoms: res
+            symptoms: res,
           },
         });
       });

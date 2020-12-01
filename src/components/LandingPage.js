@@ -16,8 +16,7 @@ class LandingPage extends Component {
           <h5>Keep track of the details to help guide you to wellness</h5>
         </div>
         <ul className="landing_right">
-
-        <img className="landingimg" src={doggo} alt="logo" />
+          <img className="landingimg" src={doggo} alt="logo" />
           <li>
             <FontAwesomeIcon icon={faCircleNotch} size="xs" alt="expand icon" />{" "}
             view by severity
@@ -30,7 +29,7 @@ class LandingPage extends Component {
             <FontAwesomeIcon icon={faCircleNotch} size="xs" alt="expand icon" />{" "}
             take control
           </li>
-          <Link to={{pathname: `/home`}}>
+          <Link to={{ pathname: `/home` }}>
             <button className="start-button">Get Started</button>
           </Link>
         </ul>

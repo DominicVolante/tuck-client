@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import SymptomCards from "./SymptomCards";
 import DefaultContext from "./context/DefaultContext";
-import Sidebar from './Sidebar'
+import Sidebar from "./Sidebar";
 
 class SymptomList extends Component {
   static contextType = DefaultContext;

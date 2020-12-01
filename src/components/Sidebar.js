@@ -6,17 +6,26 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 class Sidebar extends Component {
   state = {};
 
-
   render() {
     return (
       <div className="sidebar">
         <h3>Your log</h3>
         <div>
-          <Link to={"/home/addsymptom"}><button className="start-button"><FontAwesomeIcon icon={faPlus} /> Add Symptom</button></Link>
+          <Link to={"/home/addsymptom"}>
+            <button className="start-button">
+              <FontAwesomeIcon icon={faPlus} /> Add Symptom
+            </button>
+          </Link>
         </div>
         <div>
           <label htmlFor="organize">Sort your Tuck</label>
-          <select name="organize" id="organize" onChange={(e) => {this.props.sortList(e.target.value)}}>
+          <select
+            name="organize"
+            id="organize"
+            onChange={(e) => {
+              this.props.sortList(e.target.value);
+            }}
+          >
             <option className="hidden">Sort</option>
             <option value="date">Date</option>
             <option value="severity">Severity</option>
