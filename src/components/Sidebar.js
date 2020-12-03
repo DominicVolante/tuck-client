@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import AddSymptomForm from "./AddSymptomForm";
 
 class Sidebar extends Component {
   state = {};
@@ -9,14 +10,14 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar">
-        <h3>Your log</h3>
+        {/* <h3>Your log</h3>
         <div>
           <Link to={"/home/addsymptom"}>
             <button className="start-button">
               <FontAwesomeIcon icon={faPlus} /> Add Symptom
             </button>
           </Link>
-        </div>
+        </div> */}
         <div>
           <label htmlFor="organize">Sort your Tuck</label>
           <select
@@ -31,6 +32,7 @@ class Sidebar extends Component {
             <option value="severity">Severity</option>
           </select>
         </div>
+        <AddSymptomForm />
       </div>
     );
   }

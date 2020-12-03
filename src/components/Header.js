@@ -6,16 +6,17 @@ const Header = () => {
   console.log(tuckLogo);
   return (
     <header className="header">
-      <div className="header_flex ">
-        <Link
-          to={{
-            pathname: `/home`,
-          }}
-        >
-          <img className="headerimg" src={tuckLogo} alt="logo" />
-        </Link>
-      </div>
-      <div className="headerBar"></div>
+        <div className="header_flex ">
+          <Link
+            to={{
+              pathname: `/home`,
+            }}
+          >
+            <img className="headerimg" src={tuckLogo} alt="logo" />
+          </Link>
+        </div>
+        <div className="headerBar"></div>
+      
     </header>
   );
 };

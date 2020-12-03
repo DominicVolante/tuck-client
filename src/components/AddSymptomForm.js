@@ -35,7 +35,7 @@ class AddSymptomForm extends Component {
 
   render() {
     return (
-      <div className="register-form">
+      <div className="add-symptom-form">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -65,11 +65,11 @@ class AddSymptomForm extends Component {
           />
           <label htmlFor="description">Description</label>
           <textarea name="description" id="description" required></textarea>
-          <button className="form-button" type="submit">
+          <button className="start-button" type="submit">
             Tuck it
           </button>
           <button
-            className="form-button"
+            className="start-button"
             type="reset"
             onClick={() => this.props.history.push("/home")}
           >

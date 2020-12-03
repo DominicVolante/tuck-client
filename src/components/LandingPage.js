@@ -8,7 +8,7 @@ class LandingPage extends Component {
   state = {};
   render() {
     return (
-      <div className="landing_bar">
+      <div className="wrapper landing_bar">
         <div className="landing_left ">
           <h1>
             Need to track symptoms? <br /> Just tuck them away.
