@@ -25,22 +25,24 @@ class ExpandedSymptom extends Component {
     const { date, name, severity, description } = this.state.symptom;
     const dateString = new Date(date).toLocaleDateString();
     return (
-      <div className="expanded-item">
-        <h4>{dateString}</h4>
-        <h5>Symptom: {name}</h5>
-        <p>Severity: {severity}</p>
-        <p>Description: {description}</p>
-        <button
-          className="symptom-button"
-          type="reset"
-          onClick={() => this.props.history.push("/home")}
-        >
-          <FontAwesomeIcon
-            icon={faArrowAltCircleLeft}
-            size="2x"
-            alt="back icon"
-          />
-        </button>
+      <div>
+        <div className="expanded-item">
+          <h4>{dateString}</h4>
+          <h5>Symptom: {name}</h5>
+          <p>Severity: {severity}</p>
+          <p>Description: {description}</p>
+          <button
+            className="symptom-button"
+            type="reset"
+            onClick={() => this.props.history.push("/home")}
+          >
+            <FontAwesomeIcon
+              icon={faArrowAltCircleLeft}
+              size="2x"
+              alt="back icon"
+            />
+          </button>
+        </div>
       </div>
     );
   }
