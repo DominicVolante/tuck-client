@@ -9,6 +9,8 @@ The app also allows used to view their Tuck chart by the severity of their sympt
 
 Users can add as many details in their description as needed and can view the description of a specific symptom by clicking on the expand icon on their Tuck chart.
 
+Tuck was built with React, using pure CSS and communicates with a live NodeJS/PostgresQL server.
+
 ###### Landing Page
 ![Landing Page](/screenshots/landingPageImg.png)
 
