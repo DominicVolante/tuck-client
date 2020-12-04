@@ -4,11 +4,16 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #4e5052;
 }
+#root{
+  display: flex;
+  flex-direction: column;
+}
 .App {
   background: linear-gradient(to top right, white, #bad0e9);
   background-size: 400% 400%;
   position: relative;
   animation: change 5s ease-in-out infinite;
+  padding: 20px;
 }
 @keyframes change {
   0% {
@@ -46,6 +51,7 @@ body {
   max-width: 100%;
   height: 10em;
   border-radius: 0.3em;
+  margin-top: 50px;
 }
 .wrapper {
   margin: 50px 25px;
@@ -57,6 +63,9 @@ body {
   height: 100%;
   align-items: center;
   align-self: stretch;
+}
+.landing_left{
+  margin-top: 50px;
 }
 @media only screen and (min-width: 900px) {
   .landing_bar {
